@@ -1,0 +1,4 @@
+�System.FormatException: 输入字符串的格式不正确。
+   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDouble(String value)
+   在 Cum.MainWindow.Ln_Click(Object sender, RoutedEventArgs e) 位置 C:\Users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\MainWindow.xaml.cs:行号 48

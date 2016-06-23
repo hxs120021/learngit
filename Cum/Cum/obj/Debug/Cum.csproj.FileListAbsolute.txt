@@ -1,0 +1,15 @@
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\bin\Debug\Cum.exe
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\bin\Debug\Cum.pdb
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\MainWindow.g.cs
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\App.g.cs
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum_MarkupCompile.cache
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum_MarkupCompile.lref
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\MainWindow.baml
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum.g.resources
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum.Properties.Resources.resources
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum.csproj.GenerateResource.Cache
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum.exe
+c:\users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\Cum.pdb
+C:\Users\战地记者\Documents\Visual Studio 2015\Projects\Cum\Cum\obj\Debug\Cum.csprojResolveAssemblyReference.cache
+C:\Users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\History.g.cs
+C:\Users\战地记者\documents\visual studio 2015\Projects\Cum\Cum\obj\Debug\History.baml
