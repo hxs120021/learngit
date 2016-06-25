@@ -1,0 +1,5 @@
+c:\users\战地记者\documents\visual studio 2015\Projects\JSONCS\JSONCS\bin\Debug\JSONCS.dll
+c:\users\战地记者\documents\visual studio 2015\Projects\JSONCS\JSONCS\bin\Debug\JSONCS.pdb
+c:\users\战地记者\documents\visual studio 2015\Projects\JSONCS\JSONCS\obj\Debug\JSONCS.csprojResolveAssemblyReference.cache
+c:\users\战地记者\documents\visual studio 2015\Projects\JSONCS\JSONCS\obj\Debug\JSONCS.dll
+c:\users\战地记者\documents\visual studio 2015\Projects\JSONCS\JSONCS\obj\Debug\JSONCS.pdb
