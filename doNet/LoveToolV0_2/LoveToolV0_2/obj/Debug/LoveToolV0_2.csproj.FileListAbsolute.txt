@@ -1,0 +1,15 @@
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.exe.config
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.exe
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.pdb
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.csprojResolveAssemblyReference.cache
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\MainWindow.g.cs
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\App.g.cs
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2_MarkupCompile.cache
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2_MarkupCompile.lref
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\MainWindow.baml
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.g.resources
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.Properties.Resources.resources
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.csproj.GenerateResource.Cache
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.exe
+c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.pdb
+C:\Users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\GeneratedInternalTypeHelper.g.cs

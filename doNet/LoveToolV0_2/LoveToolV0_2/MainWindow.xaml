@@ -1,0 +1,93 @@
+﻿<Window x:Class="LoveToolV0_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoveToolV0_2"
+        xmlns:src="clr-namespace:LoveToolV0_2"
+        mc:Ignorable="d"
+        Title="LoveTools V0.2.0" Height="700" Width="550">
+    <Window.Resources>
+        <src:Source x:Key="source"/>
+    </Window.Resources>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="464*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="47*"/>
+            <ColumnDefinition Width="455*"/>
+            <ColumnDefinition Width="28*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="musicInformation" Grid.Column="2" Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="SongName" Width="350" Text="music name" Margin="5"/>
+            <Button x:Name="SelectSong"  Content="Select Music" Margin="5" Width="80" Click="SelectSong_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="SongCan" Grid.Column="2" Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="Speed:" Margin="5,10"/>
+            <TextBox x:Name="SongSpeed"  Text="1"  Margin="5,10" Width="20"/>
+            <Button x:Name="UsingSpeedButton" Content="Using" Margin="5,10" Width="40" Click="UsingSpeedButton_Click"/>
+            <Button x:Name="BackTimeButton" Margin="5,10"  Content="-1s" Width="40" Click="BackTimeButton_Click" />
+            <Button x:Name="PauseButton" Margin="5,10" Width="40" Content="pause" Click="PauseButton_Click"/>
+            <Button x:Name="PlayButtoon" Margin="5,10" Content="play" Width="40" Click="PlayButtoon_Click"/>
+            <Button x:Name="StopButton" Margin="5,10" Content="stop" Width="40" Click="StopButton_Click"/>
+            <Button x:Name="AdvanceTimeButton" Margin="5,10" Content="+1s" Width="40" Click="AdvanceTimeButton_Click"/>
+
+        </StackPanel>
+        <Grid x:Name="MakeMusicTool" Grid.Column="2" Grid.Row="2"  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="12*"/>
+                <RowDefinition Height="13*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="68*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="80*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="67*"/>
+                <ColumnDefinition Width="76*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <src:AddComboType x:Key="comboType"/>
+                <src:AddKind x:Key="Kind"/>
+            </Grid.Resources>
+            <TextBlock x:Name="AllTimeBlock" Grid.Column="0" Grid.Row="0" Text="All time(s)" Margin="5" />
+            <TextBox x:Name="AllTime" Grid.Column="0" Grid.Row="1" Text="123" Margin="5"/>
+            <TextBlock x:Name="NowTimeBlock" Grid.Column="1" Grid.Row="0" Text="Now Time(s)"  Margin="5"  />
+            <TextBox x:Name="NowTime" Grid.Column="1" Grid.Row="1" Text="0"  Margin="5"  />
+            <TextBlock x:Name="DirectionBlock" Grid.Column="2" Grid.Row="0" Margin="5" Text="Direction"/>
+            <ComboBox x:Name="DriectionCheckBox" Grid.Column="2" Grid.Row="1" Margin="5" ItemsSource="{Binding Source={StaticResource Kind}}"/>
+            <TextBlock x:Name="WaitNextTimeBlock" Grid.Column="3" Grid.Row="0" Text="Wait Time(s)" Margin="5"/>
+            <TextBox x:Name="WaitNextTime" Grid.Column="3" Grid.Row="1" Margin="5"/>
+            <TextBlock x:Name="TypeBlock" Grid.Column="4" Grid.Row="0" Text="Type"  Margin="5" />
+            <ComboBox x:Name="SelectTpye" Grid.Column="4" Grid.Row="1" Margin="0,5" ItemsSource="{Binding Source={StaticResource ResourceKey=comboType}}"/>
+            <Button x:Name="AddButton" Margin="5" Grid.Column="5" Grid.Row="0" Content="Add" Click="AddButton_Click"/>
+            <Button x:Name="DeleteButton" Margin="5" Grid.Column="5" Grid.Row="1" Content="Delete"/>
+        </Grid>
+
+        <ListView x:Name="NowSpectrum" Grid.Column="2" Grid.Row="3" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <!--<GridViewColumn Header="Collider Time" Width="100" DisplayMemberBinding="{Binding}"/>-->
+                        <GridViewColumn Header="Kind" Width="100" DisplayMemberBinding="{Binding Path=_kind}"/>
+                        <GridViewColumn Header="Wait Time" Width="100" DisplayMemberBinding="{Binding Path=_waitTim}"/>
+                        <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Path=_comboType}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="CreateFileButton" Grid.Column="2" Grid.Row="4" Content="Creat Music File" Margin="143,10,142,10" Click="CreateFileButton_Click"/>
+        <Grid Grid.Column="1" Grid.RowSpan="5" Grid.Row="0">
+            <Slider x:Name="MusicSchdule" Minimum="0" Maximum="30" Value="{Binding ElementName=NowTime,UpdateSourceTrigger=PropertyChanged, Path=Text}" 
+                    Orientation="Vertical" TickPlacement="BottomRight" />
+        </Grid>
+    </Grid>
+</Window>
