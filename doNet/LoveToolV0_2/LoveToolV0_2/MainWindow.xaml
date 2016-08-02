@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="LoveTools V0.2.0" Height="700" Width="550">
     <Window.Resources>
-        <src:Source x:Key="source"/>
+        <src:Source x:Key="s"/>
     </Window.Resources>
     <Grid>
         
@@ -72,19 +72,22 @@
             <Button x:Name="DeleteButton" Margin="5" Grid.Column="5" Grid.Row="1" Content="Delete"/>
         </Grid>
 
-        <ListView x:Name="NowSpectrum" Grid.Column="2" Grid.Row="3" Margin="10">
+        <ListView x:Name="NowSpectrum" Grid.Column="2" Grid.Row="3" Margin="10" ItemsSource="{DynamicResource s}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <!--<GridViewColumn Header="Collider Time" Width="100" DisplayMemberBinding="{Binding}"/>-->
                         <GridViewColumn Header="Kind" Width="100" DisplayMemberBinding="{Binding Path=_kind}"/>
-                        <GridViewColumn Header="Wait Time" Width="100" DisplayMemberBinding="{Binding Path=_waitTim}"/>
+                        <GridViewColumn Header="Wait Time" Width="100" DisplayMemberBinding="{Binding Path=_waitTime}"/>
                         <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding Path=_comboType}"/>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="CreateFileButton" Grid.Column="2" Grid.Row="4" Content="Creat Music File" Margin="143,10,142,10" Click="CreateFileButton_Click"/>
+        <Button x:Name="SelectPath" Content="Select Path" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Left" 
+                VerticalAlignment="Center" Margin="30,5" Height="30" Width="100" Click="SelectPath_Click"/>
+        <Button x:Name="CreateFileButton" Grid.Column="2" Grid.Row="4" Content="Creat Music File" HorizontalAlignment="Center" 
+                VerticalAlignment="Center" Height="30" Width="150" Click="CreateFileButton_Click"/>
+        <CheckBox x:Name="IsPreviewFile" Grid.Column="2" Grid.Row="4" Content="is Preview" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="30,10"/>
         <Grid Grid.Column="1" Grid.RowSpan="5" Grid.Row="0">
             <Slider x:Name="MusicSchdule" Minimum="0" Maximum="30" Value="{Binding ElementName=NowTime,UpdateSourceTrigger=PropertyChanged, Path=Text}" 
                     Orientation="Vertical" TickPlacement="BottomRight" />

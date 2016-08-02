@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace LoveToolV0_2
 {
@@ -13,6 +15,12 @@ namespace LoveToolV0_2
     {
        Short,
        Long
+    }
+
+    public enum DialogType
+    {
+        File, 
+        Folder
     }
 
     public  class Music
@@ -46,17 +54,35 @@ namespace LoveToolV0_2
             }
             return seconds;
         }
+
+        public void GetPath(DialogType dialog, ref string fileName, string titleName = "", string filter = "")
+        {
+            if (dialog == DialogType.File)
+            {
+                Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+                openFileDialog.Title = titleName;
+                openFileDialog.Filter = filter;
+                openFileDialog.FileName = string.Empty;
+                openFileDialog.RestoreDirectory = true;
+                if (openFileDialog.ShowDialog() == false)
+                    return;
+                fileName = openFileDialog.FileName;
+            }
+            else if(dialog == DialogType.Folder)
+            {
+                FolderBrowserDialog folderDialog = new FolderBrowserDialog();
+                folderDialog.Description = titleName;
+                if (folderDialog.ShowDialog() == DialogResult.OK)
+                    fileName = folderDialog.SelectedPath;
+                else if (folderDialog.ShowDialog() == DialogResult.Cancel)
+                    return;
+            }
+        }
     }
+
     public class SourceBase
     {
-        public SourceBase(int kind, float waitTime, int comboType)
-        {
-            //_collederTime = collederTime;
-            _kind = kind;
-            _waitTime = waitTime;
-            _comboType = comboType;
-        }
-        //public float _collederTime { get; set; }
+        
         public int _kind { get; set; }
         public float _waitTime { get; set; }
         public int _comboType { get; set; }

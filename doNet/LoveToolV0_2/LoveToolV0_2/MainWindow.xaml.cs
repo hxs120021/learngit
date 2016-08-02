@@ -26,6 +26,7 @@ namespace LoveToolV0_2
     {
         public MediaPlayer player = new MediaPlayer();
         DispatcherTimer timer = new DispatcherTimer();
+        public string savePath = "";
         Music music = new Music();
         
         public MainWindow()
@@ -45,18 +46,11 @@ namespace LoveToolV0_2
 
         private void SelectSong_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select Music";
-            openFileDialog.Filter = "mp3 File|*.mp3|every file|*.*";
-            openFileDialog.FileName = string.Empty;
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.RestoreDirectory = true;
-            if (openFileDialog.ShowDialog() == false)
-                return;
-            string fileName = openFileDialog.FileName;
+            string fileName = "";
+            music.GetPath(DialogType.File, ref fileName, "Select Music", "mp3 File|*.mp3|every file|*.*");
             this.SongName.Text = fileName;
             player.Open(new Uri(fileName, UriKind.Relative));
-            Console.WriteLine(player.NaturalDuration);
+            //Console.WriteLine(player.NaturalDuration);
             this.AllTime.Text = player.NaturalDuration.ToString();
         }
 
@@ -94,16 +88,15 @@ namespace LoveToolV0_2
         }
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Source source = this.Resources["source"] as Source;
-            //float s0 = float.Parse( this.NowTime.Text);
+            Source source = this.Resources["s"] as Source;
             int s1 = DriectionCheckBox.SelectedIndex;
             float s2 = float.Parse(this.WaitNextTime.Text);
             int s3 = this.SelectTpye.SelectedIndex;
-            source.AddSource(new SourceBase(s1, s2, s3));
-            foreach (var item in source)
-            {
-                Console.WriteLine("{0}\t{1}\t{2}", item._comboType, item._kind, item._waitTime);
-            }
+            source.AddSource(new SourceBase() { _kind = s1, _waitTime = s2, _comboType = s3 });
+            //foreach (var item in source)
+            //{
+            //    Console.WriteLine("{0}\t{1}\t{2}", item._comboType, item._kind, item._waitTime);
+            //}
         }
 
         private void CreateFileButton_Click(object sender, RoutedEventArgs e)
@@ -112,19 +105,64 @@ namespace LoveToolV0_2
             string fileName = "";
             GetMusicName(this.SongName.Text, ref fileName);
             fileName = fileName.Substring(0, fileName.Length - 1);
-            Console.WriteLine(fileName);
-            FileStream fs = new FileStream(fileName, FileMode.Create);
+            fileName = savePath + fileName + ".txt";
+           // Console.WriteLine(fileName);
+            
+            StringBuilder sb = new StringBuilder("");
+            foreach (var stream in (this.Resources["s"] as Source))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            sb.Append(stream._kind);
+                            break;
+                        case 1:
+                            sb.Append(stream._waitTime);
+                            break;
+                        case 2:
+                            sb.Append(stream._comboType);
+                            break;
+                    }
+                    sb.Append(" ");
+                }
+            }
+            sb.Append("0a");
+            //Console.WriteLine(sb.ToString());
+            try {
+                FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate);
+                StreamWriter bw = new StreamWriter(fs);
+                bw.Write(sb.ToString());
+                bw.Close();
+                fs.Close();
+            }
+            catch (IOException ioe)
+            {
+                MessageBox.Show(ioe.ToString());
+                FileStream fs = new FileStream("Error.txt", FileMode.Append);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.WriteLine(ioe.ToString());
+            }
         }
         private void GetMusicName(string MusicPath, ref string resultName)
         {
             Match match = Regex.Match(MusicPath, @"(^.*?\\)(.*\.)");
             if (match.Success)
             {
-                Console.WriteLine("{0}\n{1}",match.Groups[1].Value, match.Groups[2]);
+                //Console.WriteLine("{0}\n{1}",match.Groups[1].Value, match.Groups[2]);
                 resultName = match.Groups[2].Value;
                 GetMusicName(match.Groups[2].Value, ref resultName);
             }
         }
-        
+
+        private void SelectPath_Click(object sender, RoutedEventArgs e)
+        {
+            //string folderName = "";
+            music.GetPath(DialogType.Folder, ref savePath, "Select Folder Save File");
+            savePath += @"\Music File\";
+            //Console.WriteLine(savePath);
+            Directory.CreateDirectory(savePath);
+        }
     }
 }

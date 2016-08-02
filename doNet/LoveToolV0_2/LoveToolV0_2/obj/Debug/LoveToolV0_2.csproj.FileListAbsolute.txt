@@ -13,3 +13,18 @@ c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToo
 c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.exe
 c:\users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.pdb
 C:\Users\战地记者\documents\visual studio 2015\Projects\LoveToolV0_2\LoveToolV0_2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.exe.config
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.exe
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.pdb
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.exe
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\bin\Debug\LoveToolV0_2.pdb
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.csprojResolveAssemblyReference.cache
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\MainWindow.g.cs
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\App.g.cs
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2_MarkupCompile.cache
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2_MarkupCompile.lref
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\MainWindow.baml
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.g.resources
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.Properties.Resources.resources
+F:\git\doNet\LoveToolV0_2\LoveToolV0_2\obj\Debug\LoveToolV0_2.csproj.GenerateResource.Cache
